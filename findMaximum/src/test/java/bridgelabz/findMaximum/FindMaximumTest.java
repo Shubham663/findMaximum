@@ -9,27 +9,25 @@ import org.junit.Test;
 /**
  * Unit test for FindMaximum.
  */
-public class FindMaximumTest 
-{
+public class FindMaximumTest{
 	FindMaximum findMaximum;
 	
-	@Before
-	public void init() {
-		findMaximum = new FindMaximum();
-	}
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void getMaxGenericTest_first(){
-        assertEquals( "f" , FindMaximum.getMax("f", "F", "e") );
+    public void getMaxGenericClassTest_first(){
+    	findMaximum = new FindMaximum("f", "F", "e");
+    	assertEquals( "f" , FindMaximum.getMax(findMaximum.getT1(),findMaximum.getT2(),findMaximum.getT3()) );
     }
     @Test
-    public void getMaxGenericTest_second(){
-        assertEquals( new Float(5.2) , FindMaximum.getMax(4.23f, 5.2f, 3.2f) );
+    public void getMaxGenericClassTest_second(){
+    	findMaximum = new FindMaximum(4.23f, 5.2f, 3.2f);
+        assertEquals( new Float(5.2) , FindMaximum.getMax(findMaximum.getT1(),findMaximum.getT2(),findMaximum.getT3()) );
     }
     @Test
-    public void getMaxGenericTest_third(){
-        assertEquals( new Integer(4) , FindMaximum.getMax(3, 2, 4) );
+    public void getMaxGenericClassTest_third(){
+    	findMaximum = new FindMaximum(3,2,4);
+        assertEquals( new Integer(4) , FindMaximum.getMax(findMaximum.getT1(),findMaximum.getT2(),findMaximum.getT3()) );
     }
 }
