@@ -5,7 +5,41 @@ import java.util.Scanner;
  * Hello world!
  *
  */
-public class FindMaximum{
+public class FindMaximum<T extends Comparable<T>>{
+	/**
+	 * @param t1,t2,t3 are instance variables
+	 */
+	private T t1,t2,t3;
+	
+	
+	
+	public FindMaximum() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public FindMaximum(T t1, T t2, T t3) {
+		this.t1 = t1;
+		this.t2 = t2;
+		this.t3 = t3;
+	}
+	public T getT1() {
+		return t1;
+	}
+	public void setT1(T t1) {
+		this.t1 = t1;
+	}
+	public T getT2() {
+		return t2;
+	}
+	public void setT2(T t2) {
+		this.t2 = t2;
+	}
+	public T getT3() {
+		return t3;
+	}
+	public void setT3(T t3) {
+		this.t3 = t3;
+	}
 	/**
 	 * @return, returns the maximum of the three arguments
 	 */
@@ -20,6 +54,7 @@ public class FindMaximum{
         String a = sc.next();
         String b = sc.next();
         String c = sc.next();
+        FindMaximum findMaximum = new FindMaximum(a,b,c);
         String result = getMax(a,b,c);
         System.out.println("The maximum of the three is : " + result);
     }
