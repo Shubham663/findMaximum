@@ -21,15 +21,15 @@ public class FindMaximumTest
      * Rigorous Test :-)
      */
     @Test
-    public void getMaxFloatTest_first(){
-        assertEquals( new Float(4.23) , FindMaximum.getMaxFloat(4.23f, 2.00f, 4.12f) );
+    public void getMaxStringTest_first(){
+        assertEquals( "f" , FindMaximum.getMaxString("f", "F", "e") );
     }
     @Test
-    public void getMaxFloatTest_second(){
-        assertEquals( new Float(4) , FindMaximum.getMaxFloat(3f, 4f, 2f) );
+    public void getMaxStringTest_second(){
+        assertEquals( "w" , FindMaximum.getMaxString("G", "w", "e") );
     }
     @Test
-    public void getMaxFloatTest_third(){
-        assertEquals( new Float(4) , FindMaximum.getMaxFloat(3.99f, 2.4f, 4.0f) );
+    public void getMaxStringTest_third(){
+        assertEquals( "z" , FindMaximum.getMaxString("w", "Q", "z") );
     }
 }

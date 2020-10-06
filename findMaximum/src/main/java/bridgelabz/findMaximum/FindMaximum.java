@@ -17,13 +17,20 @@ public class FindMaximum
     public static void main( String[] args )
     {
     	Scanner sc = new Scanner(System.in);
-        System.out.println( "Enter the three float numbers of which you want to find the maximum" );
-        Float a = sc.nextFloat();
-        Float b = sc.nextFloat();
-        Float c = sc.nextFloat();
-        Float result = getMaxFloat(a,b,c);
-        System.out.println("The maximum value of float b/w the three no.'s is " + result);
+        System.out.println( "Enter the three Strings of which you want to find the maximum" );
+        String a = sc.next();
+        String b = sc.next();
+        String c = sc.next();
+        String result = getMaxString(a,b,c);
+        System.out.println("The maximum of strings b/w the three string's is : " + result);
     }
+
+	/**
+	 * @return, returns the maximum of the strings provided as arguments
+	 */
+	public static String getMaxString(String a, String b, String c) {
+		return a.compareTo(b) > 0 ? (a.compareTo(c) > 0 ? a : c):(b.compareTo(c) > 0 ? b : c );  
+	}
 
 	/**
 	 * @return, returns the maximum of the three float values
