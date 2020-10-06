@@ -1,4 +1,9 @@
 package bridgelabz.findMaximum;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -50,13 +55,9 @@ public class FindMaximum<T extends Comparable<T>>{
     public static void main( String[] args )
     {
     	Scanner sc = new Scanner(System.in);
-        System.out.println( "Enter three values of any type of which you want to find the maximum" );
-        String a = sc.next();
-        String b = sc.next();
-        String c = sc.next();
-        FindMaximum findMaximum = new FindMaximum(a,b,c);
-        String result = getMax(a,b,c);
-        System.out.println("The maximum of the three is : " + result);
+    	System.out.println("Getting the maximum of numbers"
+    			+ "\n 1,4,65,34,76,59,23,17");
+        System.out.println("The maximum of the multiple values is : " + getMax(1,4,65,34,76,59,23,17));
     }
 
 	/**
@@ -71,15 +72,30 @@ public class FindMaximum<T extends Comparable<T>>{
 	 */
 	public static Float getMaxFloat(final Float i,final Float j,final Float k) {
 		return Float.max(i, Float.max(j, k));
-	}
+	}	
 
 	/**
 	 * @param <T>, the generic type
 	 * @return, returns the maximum of the three elements of T type
 	 */
-	public static <T extends Comparable<T>> T getMax(T t1, T t2, T t3) {
-		
+	public static <T extends Comparable<T>> T getMax(T t1,T t2, T t3) {
 		return t1.compareTo(t2) > 0 ? (t1.compareTo(t3) > 0 ? t1 : t3):(t2.compareTo(t3) > 0 ? t2 : t3 );
 	}
+
+	/**
+	 * @param <T>, the generic type
+	 * @param tArray, the values from which maximum is to be determined
+	 * @return, returns the maximum of the values provided
+	 */
+	public static <T extends Comparable<T>> T getMax(T... tArray) {
+		List<T> tList = Arrays.asList(tArray);
+		Collections.sort(tList);
+		return tList.get(tList.size()-1);
+	}
+	
+	public int compareTo(T o) {
+		return this.compareTo(o);
+	}
+
 }
 	
